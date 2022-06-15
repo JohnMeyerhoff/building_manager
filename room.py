@@ -15,4 +15,4 @@ class Raum:
         self.number = raumnummer
         
     def printMe(self):
-        print(f"Raum {self.number}: Bezeichnung: {self.name}, Höhe (in m): {self.height}")
+        return f"Raum {self.number}: Bezeichnung: {self.name}, Höhe (in m): {self.height}"
