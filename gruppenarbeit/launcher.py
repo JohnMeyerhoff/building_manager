@@ -23,3 +23,5 @@ class Launcher:
         print("Willkommen im Raumplaner")
         print("hier können sie Ihr virtuelles Gebäudemodell verwalten!")
         print(r.raumbuch())
+
+        # print raumbuch into text file
