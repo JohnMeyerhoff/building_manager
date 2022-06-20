@@ -1,12 +1,12 @@
 class Wand:
+    length = 0.0
     height = 0.0
-    name = ""
-    number = 0
+    thickness = 0.0
 
-    def __init__(self, hoehe, bezeichnung, raumnummer):
+    def __init__(self, laenge, hoehe,  dicke):
+        self.length = laenge
         self.height = hoehe
-        self.name = bezeichnung
-        self.number = raumnummer
+        self.thickness = dicke
 
     def print_me(self):
-        return f"Raum {self.number}: Bezeichnung: {self.name}, Höhe (in m): {self.height}"
+        return f"Wand, L, H, B: {self.length}, {self.height},  {self.thickness}"
