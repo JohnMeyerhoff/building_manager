@@ -2,15 +2,18 @@ from opening import Wand
 
 
 class Stahlbetonwand(Wand):
+    # ToDo: stahldichte etc aus diagramm übernehmen
+    kind = ""
+    visible = False
 
-    height = 0.0
-    name = ""
-    number = 0
-
-    def __init__(self, hoehe, bezeichnung, raumnummer):
-        self.height = hoehe
-        self.name = bezeichnung
-        self.number = raumnummer
+    def __init__(self, steinsorte, sichtmauerwerk):
+        self.kind = steinsorte
+        self.visible = sichtmauerwerk
+        super(Stahlbetonwand, self).__init__()
 
     def print_me(self):
-        return f"Raum {self.number}: Bezeichnung: {self.name}, Höhe (in m): {self.height}"
+        if(self.visible):
+            sm = "ja"
+        else:
+            sm = "nein"
+        return f"Mauerwerk Sorte: {self.kind} Sichtmauerwerk: {sm}, L, H, B: {self.length}, {self.height},  {self.thickness}"
