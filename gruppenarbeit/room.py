@@ -14,5 +14,10 @@ class Raum:
         self.name = bezeichnung
         self.number = raumnummer
         
-    def printMe(self):
+    def print_me(self):
         return f"Raum {self.number}: Bezeichnung: {self.name}, Höhe (in m): {self.height}"
+
+    def raumbuch(self):
+        result = self.print_me()
+        result = result + "\nEnde des Berichts"
+        return result
