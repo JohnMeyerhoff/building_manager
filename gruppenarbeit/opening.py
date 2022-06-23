@@ -1,12 +1,12 @@
 class Oeffnung:
     height = 0.0
-    name = ""
-    number = 0
+    width = ""
+    diameter = 0
 
-    def __init__(self, hoehe, bezeichnung, raumnummer):
+    def __init__(self, hoehe, breite, durchmesser):
         self.height = hoehe
-        self.name = bezeichnung
-        self.number = raumnummer
+        self.width = breite
+        self.diameter = durchmesser
 
     def print_me(self):
-        return f"Raum {self.number}: Bezeichnung: {self.name}, Höhe (in m): {self.height}"
+        return f"Öffnung: Breite: {self.width}, Durchmesser: {self.diameter}, Höhe (in m): {self.height}"
