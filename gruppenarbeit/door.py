@@ -1,14 +1,13 @@
 from opening import Oeffnung
 class Tuer(Oeffnung):
 
-    height = 0.0
-    name = ""
-    number = 0
+    smoke_protection = False
+    emergency_exit = False
+    manufacturer = ""
 
-    def __init__(self, hoehe, bezeichnung, raumnummer):
-        self.height = hoehe
-        self.name = bezeichnung
-        self.number = raumnummer
-
-    def print_me(self):
-        return f"Raum {self.number}: Bezeichnung: {self.name}, Höhe (in m): {self.height}"
+    def __init__(self, rauchschutz, notausgang, hersteller):
+        self.smoke_protection = rauchschutz
+        self.emergency_exit = notausgang
+        self.manufacturer = hersteller
+        super(Oeffnung,self).__init__()
+        
