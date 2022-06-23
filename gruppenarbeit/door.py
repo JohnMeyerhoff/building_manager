@@ -9,5 +9,4 @@ class Tuer(Oeffnung):
         self.smoke_protection = rauchschutz
         self.emergency_exit = notausgang
         self.manufacturer = hersteller
-        super(Oeffnung,self).__init__()
-        
+        super(Tuer,self).__init__()
