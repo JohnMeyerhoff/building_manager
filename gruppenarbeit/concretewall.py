@@ -2,18 +2,14 @@ from opening import Wand
 
 
 class Stahlbetonwand(Wand):
-    # ToDo: stahldichte etc aus diagramm übernehmen
-    kind = ""
-    visible = False
+    steel_density = 0.0
+    concrete_density = 0.0
+    concrete_class = 0.0
+    retention_amount = 0.0
 
-    def __init__(self, steinsorte, sichtmauerwerk):
-        self.kind = steinsorte
-        self.visible = sichtmauerwerk
+    def __init__(self, stahldichte, betondichte, betonfestigkeitsklasse, bewehrungsgehalt):
+        self.steel_density = stahldichte
+        self.concrete_density = betondichte
+        self.concrete_class = betonfestigkeitsklasse
+        self.retention_amount = bewehrungsgehalt
         super(Stahlbetonwand, self).__init__()
-
-    def print_me(self):
-        if(self.visible):
-            sm = "ja"
-        else:
-            sm = "nein"
-        return f"Mauerwerk Sorte: {self.kind} Sichtmauerwerk: {sm}, L, H, B: {self.length}, {self.height},  {self.thickness}"
