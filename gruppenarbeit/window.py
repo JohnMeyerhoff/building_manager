@@ -3,14 +3,15 @@ from opening import Oeffnung
 
 class Fenster(Oeffnung):
 
-    height = 0.0
-    name = ""
-    number = 0
+    sound_protection_class = ""
+    u_value = 0.0
+    manufacturer = ""
+    brh = 0.0
 
-    def __init__(self, hoehe, bezeichnung, raumnummer):
-        self.height = hoehe
-        self.name = bezeichnung
-        self.number = raumnummer
+    def __init__(self, schallschutzklasse, u_wert, hersteller, brh):
+        self.sound_protection_class = schallschutzklasse
+        self.u_value = u_wert
+        self.manufacturer = hersteller
+        self.brh = brh
+        super(Fenster,self).__init__()
 
-    def print_me(self):
-        return f"Raum {self.number}: Bezeichnung: {self.name}, Höhe (in m): {self.height}"
