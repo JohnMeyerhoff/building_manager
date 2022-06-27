@@ -7,6 +7,8 @@ Created on Tue May 31 20:58:01 2022
 from room import Raum
 from wall import Wand
 from opening import Oeffnung
+from prompt_toolkit import prompt
+
 
 class Launcher:
     
@@ -23,6 +25,12 @@ class Launcher:
         r.print_me()
         print("Willkommen im Raumplaner")
         print("hier können sie Ihr virtuelles Gebäudemodell verwalten!")
+
+        text = prompt('Give me some input: ')
+
+        with open('readme.txt', 'w') as f:
+            f.write(text)
+
         print(r.raumbuch())
         print(o1.print_me())
 
