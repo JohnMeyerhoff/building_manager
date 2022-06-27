@@ -8,6 +8,7 @@ from room import Raum
 from wall import Wand
 from opening import Oeffnung
 from prompt_toolkit import prompt
+import codecs
 
 
 class Launcher:
@@ -26,10 +27,15 @@ class Launcher:
         print("Willkommen im Raumplaner")
         print("hier können sie Ihr virtuelles Gebäudemodell verwalten!")
 
-        text = prompt('Give me some input: ')
+        bezeichnung = prompt('Raumbezeichnung: ')
+        hoehe = prompt('Raumhöhe: ')
+        breite = prompt('Breite: ')
 
-        with open('readme.txt', 'w') as f:
-            f.write(text)
+        raum = Raum(hoehe=hoehe, bezeichnung=bezeichnung, raumnummer=5, waende=(w1, w2, w3, w4))
+
+        # Speichern einer Datei mit Umlauten https://stackoverflow.com/a/934203
+        with codecs.open("bericht.txt", "w", "utf-8-sig") as bericht:
+            bericht.write(raum.print_me())
 
         print(r.raumbuch())
         print(o1.print_me())
