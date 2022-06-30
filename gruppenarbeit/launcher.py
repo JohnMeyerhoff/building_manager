@@ -28,16 +28,21 @@ class Launcher:
         vn2 = prompt("Bitte geben sie den Vorname des 2. Teilnehmers ein: ")
         nn2 = prompt("Bitte geben sie den Nachnamen des 2. Teilnehmers ein: ")
         mn2 = prompt("Bitte geben sie die Matrikelnummer des 2. Teilnehmers ein: ")
+        separator = ", "
         line = "-" * 90
-        short_line = "-" * 30
-        ausgabe_namen = f"{nn1}, {vn1} \t\t\t\t {mn1}\n{nn2}, {vn2}  \t\t\t\t {mn2}\n" \
+        width_of_details_1 = len(vn1) + len(nn1) + len(mn1) + len(separator)
+        width_of_details_2 = len(vn2) + len(nn2) + len(mn2) + len(separator)
+        space_for_1 = " " * (90 - width_of_details_1)
+        space_for_2 = " " * (90 - width_of_details_2)
+        short_line = "-" * 25
+        ausgabe_namen = f"{nn1}{separator}{vn1}{space_for_1}{mn1}\n{nn2}{separator}{vn2}{space_for_2}{mn2}\n" \
                         f"{line}\n"
         ende = f"{line}\nEnde des Berichts"
         exit_message = f"\n{line}\nDas Programm ist beendet, die Ausgabe befindet sich in der Datei bericht.txt"
         report_writer = Report()
         # Speichern einer Datei mit Umlauten https://stackoverflow.com/a/934203
         rooms = f"Raumbuch\n{short_line}\n"
-        rooms = rooms + report_writer.write(Launcher.get_room_from_console())
+        # rooms = rooms + report_writer.write(Launcher.get_room_from_console())
         rooms = rooms + f"\n"
         with codecs.open("bericht.txt", "w", "utf-8-sig") as bericht:
             bericht.write(ausgabe_namen)
