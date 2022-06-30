@@ -67,7 +67,7 @@ class Launcher:
 
         print("\nBitte geben sie die Wände ein:")
 
-        wall_list = [Wand]
+        wall_list = []
         for i in 0, 1, 2, 3:
             print(f"\nEingabe Wand {i+1}:")
             wall_list.append(Launcher.get_wall_from_console())
