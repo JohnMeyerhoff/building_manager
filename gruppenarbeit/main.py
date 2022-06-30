@@ -6,5 +6,4 @@ Created on Tue May 31 20:58:01 2022
 """
 from launcher import Launcher
 
-
 Launcher.run()

@@ -1,11 +1,13 @@
-﻿paulsen, ben                                                                          6312
-lunar, lucy                                                                         368271
+﻿Walters, Jakob                                                                        3219
+Mertens, Linda                                                                        3125
 ------------------------------------------------------------------------------------------
 Raumbuch
 -------------------------
-0- Raum (Raumbezeichnung: Blauer Raum, Raumnummer: 8)
-         Raumvolumen: 0.00
+0- Raum (Raumbezeichnung: Blauer Raum, Raumnummer: 92)
+         Raumvolumen: 700.00 m³
 
+1- Raum (Raumbezeichnung: Blauer Raum, Raumnummer: 52)
+         Raumvolumen: 600.00 m³
 
 
 ------------------------------------------------------------------------------------------

@@ -3,7 +3,7 @@ class Wand:
     height = 0.0
     thickness = 0.0
 
-    def __init__(self, laenge, hoehe,  dicke):
+    def __init__(self, laenge, hoehe, dicke):
         self.length = laenge
         self.height = hoehe
         self.thickness = dicke

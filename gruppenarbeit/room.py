@@ -26,9 +26,11 @@ class Raum:
         return f"- Raum (Raumbezeichnung: {self.name}, Raumnummer: {self.number})\n"
 
     def raumbuch(self):
+        unicode_drei = "\u00B3"  # https://www.compart.com/en/unicode/U+00B3
         result = self.print_me()
         indent = " " * 9
-        result = result + indent + f"Raumvolumen: {self.volume():.2f}\n"
+        # Dezimaltrennzeichen ist in der Ausgabe ein Punkt.
+        result = result + indent + f"Raumvolumen: {self.volume():.2f} m{unicode_drei}\n"
         # Floatformatierung 2 Nachkommastellen
 
         return result
