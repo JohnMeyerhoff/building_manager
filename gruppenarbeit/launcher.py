@@ -32,18 +32,23 @@ class Launcher:
         short_line = "-" * 25
         line = "-" * 90
         ausgabe_namen = Report.write_header(line, vn1, nn1, mn1, vn2, nn2, mn2)
-        ende = f"{line}\nEnde des Berichts"
+        ende = f"\n{line}\nEnde des Berichts"
         exit_message = f"\n{line}\nDas Programm ist beendet, die Ausgabe befindet sich in der Datei bericht.txt"
 
         # Speichern einer Datei mit Umlauten https://stackoverflow.com/a/934203
         rooms = f"Raumbuch\n{short_line}\n"
         # rooms = rooms + report_writer.write(Launcher.get_room_from_console())
-        rooms = rooms + f"\n"
-
+        room_list = []
+        eingabe = "leer"
+        while eingabe != "nein" and eingabe != "Nein" and eingabe != "n":
+            room_list.append(Launcher.get_room_from_console())
+            eingabe = prompt("Möchten Sie einen weiteren Raum eingeben? (ja/nein) ")
         report_writer = Report()
         with codecs.open("bericht.txt", "w", "utf-8-sig") as bericht:
             bericht.write(ausgabe_namen)
             bericht.write(rooms)
+            for i, room in enumerate(room_list):
+                bericht.write(f"{i}" + room.print_me())
             bericht.write(ende)
 
         print(exit_message)

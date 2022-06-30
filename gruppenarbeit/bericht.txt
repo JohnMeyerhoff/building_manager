@@ -1,8 +1,11 @@
-﻿reese, kyle                                                                       92568347
-sandy, mandy                                                                      96845237
+﻿williams, lucy                                                                    23456789
+baum, martin                                                                         56924
 ------------------------------------------------------------------------------------------
 Raumbuch
 -------------------------
+0- Raum (Raumbezeichnung: Blauer Raum, Raumnummer: 5:  
+1- Raum (Raumbezeichnung: Gelbe Kiste, Raumnummer: 5:  
+2- Raum (Raumbezeichnung: Graue Box, Raumnummer: 5:  
 
 ------------------------------------------------------------------------------------------
 Ende des Berichts
