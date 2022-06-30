@@ -8,6 +8,7 @@ from room import Raum
 from wall import Wand
 from opening import Oeffnung
 from prompt_toolkit import prompt
+from prompt_toolkit.validation import Validator, ValidationError
 from reportWriter import Report
 import codecs
 
@@ -48,7 +49,7 @@ class Launcher:
             bericht.write(ausgabe_namen)
             bericht.write(rooms)
             for i, room in enumerate(room_list):
-                bericht.write(f"{i}" + room.print_me())
+                bericht.write(f"{i}" + room.raumbuch() + "\n\n")
             bericht.write(ende)
 
         print(exit_message)
@@ -57,14 +58,43 @@ class Launcher:
 
     @staticmethod
     def get_room_from_console():
-        w1 = Wand(5, 4, 0.2)
-        w2 = Wand(5, 4, 0.2)
-        w3 = Wand(5, 4, 0.2)
-        w4 = Wand(5, 4, 0.2)
+
         o1 = Oeffnung(2, 1, 5)
 
         bezeichnung = prompt('Raumbezeichnung: ')
-        hoehe = prompt('Raumhöhe: ')
-        breite = prompt('Breite: ')
+        float_validator = Validator.from_callable(Launcher.zahl_ok, error_message='Invalid input')
+        nummer = prompt('Nummer: ', validator=float_validator)
 
-        return Raum(hoehe=hoehe, bezeichnung=bezeichnung, raumnummer=5, waende=(w1, w2, w3, w4))
+        print("\nBitte geben sie die Wände ein:")
+
+        wall_list = [Wand]
+        for i in 0, 1, 2, 3:
+            print(f"\nEingabe Wand {i+1}:")
+            wall_list.append(Launcher.get_wall_from_console())
+            print("\n")
+            print(wall_list[i].print_me())
+            eingabe = "leer"
+            while eingabe != "nein" and eingabe != "Nein" and eingabe != "n":
+                eingabe = prompt("Möchten Sie eine Öffnung für die Wand eingeben? (ja/nein) ")
+
+        return Raum(hoehe=wall_list[0].height, bezeichnung=bezeichnung, raumnummer=int(nummer),
+                    waende=(wall_list[0], wall_list[1], wall_list[2], wall_list[3]))
+
+    @staticmethod
+    def get_wall_from_console() -> Wand:
+        float_validator = Validator.from_callable(Launcher.zahl_ok,
+                                                  error_message='Bitte geben Sie eine Zahl ein "." als Dezimalzeichen')
+        breite = prompt('Breite: ', validator=float_validator)
+        hoehe = prompt('Höhe: ', validator=float_validator)
+        dicke = prompt('Dicke: ', validator=float_validator)
+        return Wand(float(breite), float(hoehe), float(dicke))
+
+    # aus der Dokumentation
+
+    @staticmethod
+    def zahl_ok(eingabe):
+        try:
+            float(eingabe)
+            return True
+        except ValueError:
+            return False

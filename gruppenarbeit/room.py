@@ -23,19 +23,16 @@ class Raum:
         self.walls = waende
 
     def print_me(self):
-        return f"- Raum (Raumbezeichnung: {self.name}, Raumnummer: {self.number}:  \n"
+        return f"- Raum (Raumbezeichnung: {self.name}, Raumnummer: {self.number})\n"
 
     def raumbuch(self):
         result = self.print_me()
-        result = result + "\n"+Raum.line(60)
-        result = result + f"\nVolumen des Raums: {self.volume()}"
-        result = result + "\nEnde des Berichts"
+        indent = " " * 9
+        result = result + indent + f"Raumvolumen: {self.volume():.2f}\n"
+        # Floatformatierung 2 Nachkommastellen
+
         return result
 
     def volume(self):
         # berechnet h x l x w wobei von einer rechteckigen form ausgegangen wird.
-        return self.walls[0].height * self.walls[0].length * self.walls[1].length
-
-    @staticmethod
-    def line(len: int):
-        return "-"*len
+        return 1.0 * self.walls[0].height * self.walls[0].length * self.walls[1].length
