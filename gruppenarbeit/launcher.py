@@ -8,6 +8,7 @@ from room import Raum
 from wall import Wand
 from opening import Oeffnung
 from prompt_toolkit import prompt
+from reportWriter import Report
 import codecs
 
 
@@ -32,10 +33,10 @@ class Launcher:
         breite = prompt('Breite: ')
 
         raum = Raum(hoehe=hoehe, bezeichnung=bezeichnung, raumnummer=5, waende=(w1, w2, w3, w4))
-
+        reportWriter = Report()
         # Speichern einer Datei mit Umlauten https://stackoverflow.com/a/934203
         with codecs.open("bericht.txt", "w", "utf-8-sig") as bericht:
-            bericht.write(raum.print_me())
+            bericht.write(reportWriter.write(raum))
 
         print(r.raumbuch())
         print(o1.print_me())
