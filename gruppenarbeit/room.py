@@ -31,6 +31,7 @@ class Raum:
         indent = " " * 9
         # Dezimaltrennzeichen ist in der Ausgabe ein Punkt.
         result = result + indent + f"Raumvolumen: {self.volume():.2f} m{unicode_drei}\n"
+        result = result + indent + f"Raumumfang: {self.circumference():.2f} m\n"
         # Floatformatierung 2 Nachkommastellen
 
         return result
@@ -38,3 +39,7 @@ class Raum:
     def volume(self):
         # berechnet h x l x w wobei von einer rechteckigen form ausgegangen wird.
         return 1.0 * self.walls[0].height * self.walls[0].length * self.walls[1].length
+
+    def circumference(self):
+        # berechnet l x w wobei von einer rechteckigen form ausgegangen wird.
+        return 1.0 * self.walls[0].length * self.walls[1].length

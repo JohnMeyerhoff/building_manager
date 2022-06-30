@@ -37,7 +37,9 @@ class Launcher:
         exit_message = f"\n{line}\nDas Programm ist beendet, die Ausgabe befindet sich in der Datei bericht.txt"
 
         # Speichern einer Datei mit Umlauten https://stackoverflow.com/a/934203
-        rooms = f"Raumbuch\n{short_line}\n"
+        rooms = f"Raumbuch\n{short_line}\n"  # kein Doppelpunkt hier
+        doors = f"Türliste:\n{short_line}\n"
+        windows = f"Fensterliste:\n{short_line}\n"
         # rooms = rooms + report_writer.write(Launcher.get_room_from_console())
         room_list = []
         eingabe = "leer"
@@ -50,6 +52,10 @@ class Launcher:
             bericht.write(rooms)
             for i, room in enumerate(room_list):
                 bericht.write(f"{i}" + room.raumbuch() + "\n\n")
+
+            bericht.write(doors)
+
+            bericht.write(windows)
             bericht.write(ende)
 
         print(exit_message)
