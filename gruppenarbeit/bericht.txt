@@ -1,22 +1,14 @@
-﻿fdafd, kljhfsd                                                                           f
-sd, fdas                                                                            fafdas
+﻿adfsd, lkhjfsdfs                                                                       fas
+sdfa, sdfa                                                                                
 ------------------------------------------------------------------------------------------
 Raumbuch
 -------------------------
-0- Raum (Raumbezeichnung: fda, Raumnummer: 312)
-         Raumvolumen: 14.00 m³
-         Raumumfang: 14.00 m
-
-         Raumseitenflaeche Brutto: 4497.00 m²
-         Raumseitenflaeche Netto: 3873.00 m²
-
-
-1- Raum (Raumbezeichnung: kjdsfn, Raumnummer: 31)
+0- Raum (Raumbezeichnung: asdff, Raumnummer: 12)
          Raumvolumen: 1.00 m³
          Raumumfang: 1.00 m
 
-         Raumseitenflaeche Brutto: 4.00 m²
-         Raumseitenflaeche Netto: -620.00 m²
+         Raumseitenflaeche Brutto: 103.00 m²
+         Raumseitenflaeche Netto: -521.00 m²
 
 
 Türliste:

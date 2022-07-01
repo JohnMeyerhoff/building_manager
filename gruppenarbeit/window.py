@@ -7,10 +7,9 @@ class Fenster(Oeffnung):
     manufacturer = ""
     brh = 0.0
 
-    def __init__(self, schallschutzklasse, u_wert, hersteller, brh, hoehe, breite, durchmesser):
+    def __init__(self, schallschutzklasse, u_wert, hersteller, brh, breite, hoehe, durchmesser):
         super(Fenster, self).__init__(hoehe, breite, durchmesser)
         self.sound_protection_class = schallschutzklasse
         self.u_value = u_wert
         self.manufacturer = hersteller
         self.brh = brh
-

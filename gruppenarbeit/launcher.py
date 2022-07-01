@@ -8,12 +8,12 @@ import codecs
 from prompt_toolkit import prompt
 from prompt_toolkit.validation import Validator, ValidationError
 
+from door import Tuer
 from opening import Oeffnung
 from reportWriter import Report
 from room import Raum
 from wall import Wand
 from window import Fenster
-from door import Tuer
 
 
 class Launcher:
@@ -112,14 +112,20 @@ class Launcher:
             kind = "Tür"
         breite = prompt('Breite: ', validator=float_validator)
         hoehe = prompt('Höhe: ', validator=float_validator)
-        dicke = prompt('Dicke: ', validator=float_validator)
+        durchmesser = prompt('Durchmesser: ', validator=float_validator)
         if kind == "Fenster":
             schallschutzklasse = prompt('Schallschutzklasse: ')
             u_wert = prompt('U-Wert: ', validator=float_validator)
             hersteller = prompt('Hersteller: ')
             brh = prompt('Brh: ', validator=float_validator)
-            return Fenster( schallschutzklasse, float(u_wert), hersteller, float(brh), float(breite), float(hoehe), float(dicke))
-        return Tuer(float(breite), float(hoehe), float(dicke))
+            return Fenster(schallschutzklasse, float(u_wert), hersteller, float(brh), float(breite), float(hoehe),
+                           float(durchmesser))
+        else:
+            rauchschutz = prompt('Rauchschutz: (ja/nein) ') == "ja"
+            notausgang = prompt('Notausgang: (ja/nein) ') == "ja"
+            hersteller = prompt('Hersteller: ')
+            return Tuer(rauchschutz, notausgang, hersteller,  float(breite), float(hoehe),
+                           float(durchmesser))
 
     # aus der Dokumentation
 
