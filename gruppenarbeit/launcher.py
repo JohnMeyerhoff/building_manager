@@ -44,20 +44,19 @@ class Launcher:
         doors = f"Türliste:\n{short_line}\n"
         windows = f"Fensterliste:\n{short_line}\n"
         room_list = []
-        doors_list = []
-        windows_list = []
+
         eingabe = "leer"
         while eingabe != "nein" and eingabe != "Nein" and eingabe != "n":
             room_list.append(Launcher.get_room_from_console())
             eingabe = prompt("Möchten Sie einen weiteren Raum eingeben? (ja/nein) ")
         report_writer = Report()
+        windows_list = [room.get_windows() for room in room_list]
+        doors_list = [room.get_doors() for room in room_list]
         with codecs.open("bericht.txt", "w", "utf-8-sig") as bericht:
             bericht.write(ausgabe_namen)
             bericht.write(rooms)
             for i, room in enumerate(room_list):
                 bericht.write(f"{i}" + room.raumbuch() + "\n\n")
-                doors_list.append(room.get_doors())
-                windows_list.append(room.get_windows())
             bericht.write(doors)
             bericht.write(Report.write_doors(doors_list))
             bericht.write(windows)
@@ -79,7 +78,7 @@ class Launcher:
 
         print("\nBitte geben sie die Wände ein:")
 
-        wall_list = []
+        wall_list: [Wand] = []
         for i in 0, 1, 2, 3:
             print(f"\nEingabe Wand {i + 1}:")
             wall_list.append(Launcher.get_wall_from_console())
@@ -87,7 +86,9 @@ class Launcher:
             print(wall_list[i].print_me())
             eingabe = prompt("Möchten Sie eine Öffnung für die Wand eingeben? (ja/nein) ")
             while eingabe != "nein" and eingabe != "Nein" and eingabe != "n":
-                wall_list[i].add_opening(Launcher.get_opening_from_console())
+                oeffn = Launcher.get_opening_from_console()
+                wall_list[i].add_opening(oeffn)
+                print(oeffn.print_me())
                 eingabe = prompt("Möchten Sie eine weitere Öffnung für die Wand eingeben? (ja/nein) ")
 
         return Raum(hoehe=wall_list[0].height, bezeichnung=bezeichnung, raumnummer=int(nummer),
@@ -103,7 +104,7 @@ class Launcher:
         return Wand(float(breite), float(hoehe), float(dicke))
 
     @staticmethod
-    def get_opening_from_console() -> Wand:
+    def get_opening_from_console() -> Oeffnung:
         float_validator = Validator.from_callable(Launcher.zahl_ok,
                                                   error_message='Bitte geben Sie eine Zahl ein "." als Dezimalzeichen')
         fenster_oder_tuer = Validator.from_callable(Launcher.opening_ok,

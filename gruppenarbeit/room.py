@@ -60,17 +60,33 @@ class Raum:
                self.walls[3].vob_wall_area()
 
     def get_doors(self):
+        """
+        Wenn eine Öffnung eine Tür ist, dann wird sie in die Liste der Türen aufgenommen.
+        :return: List of Doors
+        """
         doors = []
-        for wall in self.walls:
-            for opening in wall.openings:
-                if (isinstance(opening, Tuer)):
-                    doors.append(opening)
+        added = []
+        for i in 0, 1, 2, 3:
+            for opening in self.walls[i].openings:
+                if isinstance(opening, Tuer):
+
+                    if opening not in added:
+                        added.append(opening)
+                        doors.append(opening)
         return doors
 
     def get_windows(self):
+        """
+        Wenn eine Öffnung ein Fenster ist, dann wird sie in die Liste der Fenster aufgenommen.
+        :return: List of Doors
+        """
         windows = []
-        for wall in self.walls:
-            for opening in wall.openings:
-                if (isinstance(opening, Fenster)):
-                    windows.append(opening)
+        added = []
+        for i in 0, 1, 2, 3:
+            for opening in self.walls[i].openings:
+                if isinstance(opening, Fenster):
+                    if opening not in added:
+                        added.append(opening)
+                        windows.append(opening)
+
         return windows

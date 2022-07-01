@@ -1,39 +1,23 @@
-﻿wilms, paul                                                                       86524398
-wonks, patricia                                                                     698257
+﻿dfdf, hfldskjhfda                                                                       af
+df, d                                                                                  sdf
 ------------------------------------------------------------------------------------------
 Raumbuch
 -------------------------
-0- Raum (Raumbezeichnung: Blauer Raum, Raumnummer: 41)
-         Raumvolumen: 96.00 m³
-         Raumumfang: 48.00 m
+0- Raum (Raumbezeichnung: fdsfd, Raumnummer: 4)
+         Raumvolumen: 121.00 m³
+         Raumumfang: 11.00 m
 
-         Raumseitenflaeche Brutto: 56.00 m²
-         Raumseitenflaeche Netto: 56.00 m²
+         Raumseitenflaeche Brutto: 124.00 m²
+         Raumseitenflaeche Netto: 80.00 m²
 
 
 Türliste:
 -------------------------
-0
-
-0Tuer: Breite: 1.2, Durchmesser: 2.0, Höhe (in m): 1.8
-
-1Tuer: Breite: 1.2, Durchmesser: 2.0, Höhe (in m): 1.8
-
-2Tuer: Breite: 1.2, Durchmesser: 2.0, Höhe (in m): 1.8
-
-3Tuer: Breite: 1.2, Durchmesser: 2.0, Höhe (in m): 1.8
-
 Fensterliste:
 -------------------------
 0
 
-0Fenster: Breite: 2.0, Durchmesser: 1.2, Höhe (in m): 1.0
-
-0Fenster: Breite: 2.0, Durchmesser: 1.2, Höhe (in m): 1.0
-
-0Fenster: Breite: 2.0, Durchmesser: 1.2, Höhe (in m): 1.0
-
-0Fenster: Breite: 2.0, Durchmesser: 1.2, Höhe (in m): 1.0
+Raum 0 Fenster,0Fenster: Breite: 11.0, Durchmesser: 1.0, Höhe (in m): 1.0
 
 
 ------------------------------------------------------------------------------------------

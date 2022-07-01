@@ -1,6 +1,6 @@
 from door import Tuer
 from window import Fenster
-
+from opening import Oeffnung
 
 class Report:
     numbering = 0
@@ -14,21 +14,21 @@ class Report:
         # ohne Leerzeichen, da dies in der Print-Funktion bereits vorhanden ist
 
     @staticmethod
-    def write_windows(doors_list: [Fenster]) -> str:
+    def write_windows(windows_list) -> str:
         res = ""
-        for i, windowL in enumerate(doors_list):
+        for i, windowL in enumerate(windows_list):
             res = res + f"{i}" + "\n\n"
+            print(len(windowL))
             for x, window in enumerate(windowL):
-                res = res + f"{i}" + window.print_me() + "\n\n"
+                res = res + f"Raum {i} Fenster,{x}" + window.print_me() + "\n\n"
         return res
 
     @staticmethod
-    def write_doors(doors_list: [Tuer]) -> str:
+    def write_doors(doors_list) -> str:
         res = ""
         for i, doorL in enumerate(doors_list):
-            res = res + f"{i}" + "\n\n"
             for x, door in enumerate(doorL):
-                res = res + f"{x}" + door.print_me() + "\n\n"
+                res = res + f"Raum {i} Tuer,{x} " + door.print_me() + "\n\n"
         return res
 
     @staticmethod
