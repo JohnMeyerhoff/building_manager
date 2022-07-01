@@ -1,11 +1,15 @@
-﻿Petersen, Paul                                                                      824567
-Spirgel, Linda                                                                    92678345
+﻿Petersen, Wilhelm                                                                  6982534
+Schraber, Lisa                                                                      296534
 ------------------------------------------------------------------------------------------
 Raumbuch
 -------------------------
-0- Raum (Raumbezeichnung: Blauer Raum B, Raumnummer: 97)
-         Raumvolumen: 197.33 m³
-         Raumumfang: 84.17 m
+0- Raum (Raumbezeichnung: Blauer Raum B, Raumnummer: 92)
+         Raumvolumen: 270.40 m³
+         Raumumfang: 108.16 m
+
+         Raumseitenflaeche Brutto: 104.00 m
+
+         Raumseitenflaeche Netto: 104.00 m
 
 
 Türliste:

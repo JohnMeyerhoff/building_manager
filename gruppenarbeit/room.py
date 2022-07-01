@@ -34,8 +34,8 @@ class Raum:
         # Dezimaltrennzeichen ist in der Ausgabe ein Punkt.
         result = result + indent + f"Raumvolumen: {self.volume():.2f} m{unicode_drei}\n"
         result = result + indent + f"Raumumfang: {self.circumference():.2f} m\n"
-        result = result + "\n" + indent + f"Raumseitenflaeche Brutto: {self.total_wall_area():.2f} m\n"
-        result = result + "\n" + indent + f"Raumseitenflaeche Netto: {self.vob_wall_area():.2f} m\n"
+        result = result + "\n" + indent + f"Raumseitenflaeche Brutto: {self.total_wall_area():.2f} m{unicode_zwei}\n"
+        result = result + indent + f"Raumseitenflaeche Netto: {self.vob_wall_area():.2f} m{unicode_zwei}\n"
         # Floatformatierung 2 Nachkommastellen
 
         return result
