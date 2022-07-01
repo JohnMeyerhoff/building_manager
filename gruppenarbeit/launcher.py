@@ -118,7 +118,7 @@ class Launcher:
             u_wert = prompt('U-Wert: ', validator=float_validator)
             hersteller = prompt('Hersteller: ')
             brh = prompt('Brh: ', validator=float_validator)
-            return Fenster( schallschutzklasse, u_wert, hersteller, brh, float(breite), float(hoehe), float(dicke))
+            return Fenster( schallschutzklasse, float(u_wert), hersteller, float(brh), float(breite), float(hoehe), float(dicke))
         return Tuer(float(breite), float(hoehe), float(dicke))
 
     # aus der Dokumentation

@@ -1,15 +1,22 @@
-﻿Petersen, Wilhelm                                                                  6982534
-Schraber, Lisa                                                                      296534
+﻿fdafd, kljhfsd                                                                           f
+sd, fdas                                                                            fafdas
 ------------------------------------------------------------------------------------------
 Raumbuch
 -------------------------
-0- Raum (Raumbezeichnung: Blauer Raum B, Raumnummer: 92)
-         Raumvolumen: 270.40 m³
-         Raumumfang: 108.16 m
+0- Raum (Raumbezeichnung: fda, Raumnummer: 312)
+         Raumvolumen: 14.00 m³
+         Raumumfang: 14.00 m
 
-         Raumseitenflaeche Brutto: 104.00 m
+         Raumseitenflaeche Brutto: 4497.00 m²
+         Raumseitenflaeche Netto: 3873.00 m²
 
-         Raumseitenflaeche Netto: 104.00 m
+
+1- Raum (Raumbezeichnung: kjdsfn, Raumnummer: 31)
+         Raumvolumen: 1.00 m³
+         Raumumfang: 1.00 m
+
+         Raumseitenflaeche Brutto: 4.00 m²
+         Raumseitenflaeche Netto: -620.00 m²
 
 
 Türliste:
