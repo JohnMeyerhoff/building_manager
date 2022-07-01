@@ -4,13 +4,16 @@ Created on Tue May 31 20:58:01 2022
 
 @author: john
 """
-from room import Raum
-from wall import Wand
-from opening import Oeffnung
+import codecs
 from prompt_toolkit import prompt
 from prompt_toolkit.validation import Validator, ValidationError
+
+from opening import Oeffnung
 from reportWriter import Report
-import codecs
+from room import Raum
+from wall import Wand
+from window import Fenster
+from door import Tuer
 
 
 class Launcher:
@@ -40,7 +43,6 @@ class Launcher:
         rooms = f"Raumbuch\n{short_line}\n"  # kein Doppelpunkt hier
         doors = f"Türliste:\n{short_line}\n"
         windows = f"Fensterliste:\n{short_line}\n"
-        # rooms = rooms + report_writer.write(Launcher.get_room_from_console())
         room_list = []
         eingabe = "leer"
         while eingabe != "nein" and eingabe != "Nein" and eingabe != "n":
@@ -79,8 +81,9 @@ class Launcher:
             wall_list.append(Launcher.get_wall_from_console())
             print("\n")
             print(wall_list[i].print_me())
-            eingabe = "leer"
+            eingabe = prompt("Möchten Sie eine Öffnung für die Wand eingeben? (ja/nein) ")
             while eingabe != "nein" and eingabe != "Nein" and eingabe != "n":
+                wall_list[i].add_opening(Launcher.get_opening_from_console())
                 eingabe = prompt("Möchten Sie eine Öffnung für die Wand eingeben? (ja/nein) ")
 
         return Raum(hoehe=wall_list[0].height, bezeichnung=bezeichnung, raumnummer=int(nummer),
@@ -95,6 +98,29 @@ class Launcher:
         dicke = prompt('Dicke: ', validator=float_validator)
         return Wand(float(breite), float(hoehe), float(dicke))
 
+    @staticmethod
+    def get_opening_from_console() -> Wand:
+        float_validator = Validator.from_callable(Launcher.zahl_ok,
+                                                  error_message='Bitte geben Sie eine Zahl ein "." als Dezimalzeichen')
+        fenster_oder_tuer = Validator.from_callable(Launcher.opening_ok,
+                                                    error_message='Bitte geben Sie "Fenster" oder "Tür" ein (oder F/T)')
+
+        kind = prompt('Art der Öffnung: (Fenster/Tür) ', validator=fenster_oder_tuer)
+        if kind == "f" or kind == "F" or kind == "Fenster":
+            kind = "Fenster"
+        elif kind == "t" or kind == "T" or kind == "Tür":
+            kind = "Tür"
+        breite = prompt('Breite: ', validator=float_validator)
+        hoehe = prompt('Höhe: ', validator=float_validator)
+        dicke = prompt('Dicke: ', validator=float_validator)
+        if kind == "Fenster":
+            schallschutzklasse = prompt('Schallschutzklasse: ')
+            u_wert = prompt('U-Wert: ', validator=float_validator)
+            hersteller = prompt('Hersteller: ')
+            brh = prompt('Brh: ', validator=float_validator)
+            return Fenster( schallschutzklasse, u_wert, hersteller, brh, float(breite), float(hoehe), float(dicke))
+        return Tuer(float(breite), float(hoehe), float(dicke))
+
     # aus der Dokumentation
 
     @staticmethod
@@ -103,4 +129,11 @@ class Launcher:
             float(eingabe)
             return True
         except ValueError:
+            return False
+
+    @staticmethod
+    def opening_ok(eingabe):
+        if eingabe == "f" or eingabe == "F" or eingabe == "Fenster" or eingabe == "t" or eingabe == "T" or eingabe == "Tür":
+            return True
+        else:
             return False
