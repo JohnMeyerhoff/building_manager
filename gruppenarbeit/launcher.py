@@ -59,11 +59,9 @@ class Launcher:
                 doors_list.append(room.get_doors())
                 windows_list.append(room.get_windows())
             bericht.write(doors)
-            for i, door in enumerate(doors_list):
-                bericht.write(f"{i}" + door.print_me() + "\n\n")
+            bericht.write(Report.write_doors(doors_list))
             bericht.write(windows)
-            for i, window in enumerate(windows_list):
-                bericht.write(f"{i}" + window.print_me() + "\n\n")
+            bericht.write(Report.write_windows(windows_list))
             bericht.write(ende)
 
         print(exit_message)

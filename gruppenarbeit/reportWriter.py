@@ -1,3 +1,7 @@
+from door import Tuer
+from window import Fenster
+
+
 class Report:
     numbering = 0
 
@@ -8,6 +12,24 @@ class Report:
         self.numbering = self.numbering + 1  # increment the numbering
         return f"{self.numbering}" + raum.print_me()
         # ohne Leerzeichen, da dies in der Print-Funktion bereits vorhanden ist
+
+    @staticmethod
+    def write_windows(doors_list: [Fenster]) -> str:
+        res = ""
+        for i, windowL in enumerate(doors_list):
+            res = res + f"{i}" + "\n\n"
+            for x, window in enumerate(windowL):
+                res = res + f"{i}" + window.print_me() + "\n\n"
+        return res
+
+    @staticmethod
+    def write_doors(doors_list: [Tuer]) -> str:
+        res = ""
+        for i, doorL in enumerate(doors_list):
+            res = res + f"{i}" + "\n\n"
+            for x, door in enumerate(doorL):
+                res = res + f"{x}" + door.print_me() + "\n\n"
+        return res
 
     @staticmethod
     def write_header(line, vn1, nn1, mn1, vn2, nn2, mn2):

@@ -1,15 +1,40 @@
-﻿peters, paul                                                                        793862
-lengsdorf, lisa                                                                        321
+﻿wilms, paul                                                                       86524398
+wonks, patricia                                                                     698257
 ------------------------------------------------------------------------------------------
 Raumbuch
 -------------------------
-0- Raum (Raumbezeichnung: Blauer Raum B, Raumnummer: 19)
-         Raumvolumen: 1.00 m³
-         Raumumfang: 1.00 m
+0- Raum (Raumbezeichnung: Blauer Raum, Raumnummer: 41)
+         Raumvolumen: 96.00 m³
+         Raumumfang: 48.00 m
 
-         Raumseitenflaeche Brutto: 4.00 m²
-         Raumseitenflaeche Netto: 4.00 m²
+         Raumseitenflaeche Brutto: 56.00 m²
+         Raumseitenflaeche Netto: 56.00 m²
 
 
 Türliste:
 -------------------------
+0
+
+0Tuer: Breite: 1.2, Durchmesser: 2.0, Höhe (in m): 1.8
+
+1Tuer: Breite: 1.2, Durchmesser: 2.0, Höhe (in m): 1.8
+
+2Tuer: Breite: 1.2, Durchmesser: 2.0, Höhe (in m): 1.8
+
+3Tuer: Breite: 1.2, Durchmesser: 2.0, Höhe (in m): 1.8
+
+Fensterliste:
+-------------------------
+0
+
+0Fenster: Breite: 2.0, Durchmesser: 1.2, Höhe (in m): 1.0
+
+0Fenster: Breite: 2.0, Durchmesser: 1.2, Höhe (in m): 1.0
+
+0Fenster: Breite: 2.0, Durchmesser: 1.2, Höhe (in m): 1.0
+
+0Fenster: Breite: 2.0, Durchmesser: 1.2, Höhe (in m): 1.0
+
+
+------------------------------------------------------------------------------------------
+Ende des Berichts
