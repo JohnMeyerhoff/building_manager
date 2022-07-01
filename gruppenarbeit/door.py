@@ -11,3 +11,6 @@ class Tuer(Oeffnung):
         self.smoke_protection = rauchschutz
         self.emergency_exit = notausgang
         self.manufacturer = hersteller
+
+    def print_me(self):
+        return f"Tuer: Breite: {self.width}, Durchmesser: {self.diameter}, Höhe (in m): {self.height}"

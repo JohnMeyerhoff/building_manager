@@ -1,20 +1,15 @@
-﻿adfsd, lkhjfsdfs                                                                       fas
-sdfa, sdfa                                                                                
+﻿peters, paul                                                                        793862
+lengsdorf, lisa                                                                        321
 ------------------------------------------------------------------------------------------
 Raumbuch
 -------------------------
-0- Raum (Raumbezeichnung: asdff, Raumnummer: 12)
+0- Raum (Raumbezeichnung: Blauer Raum B, Raumnummer: 19)
          Raumvolumen: 1.00 m³
          Raumumfang: 1.00 m
 
-         Raumseitenflaeche Brutto: 103.00 m²
-         Raumseitenflaeche Netto: -521.00 m²
+         Raumseitenflaeche Brutto: 4.00 m²
+         Raumseitenflaeche Netto: 4.00 m²
 
 
 Türliste:
 -------------------------
-Fensterliste:
--------------------------
-
-------------------------------------------------------------------------------------------
-Ende des Berichts

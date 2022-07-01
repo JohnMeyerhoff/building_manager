@@ -6,7 +6,10 @@ Created on Tue May 31 21:01:38 2022
 """
 from typing import Tuple
 
+from door import Tuer
+from opening import Oeffnung
 from wall import Wand
+from window import Fenster
 
 Walls = Tuple[Wand, Wand, Wand, Wand]
 
@@ -55,3 +58,19 @@ class Raum:
     def vob_wall_area(self):
         return self.walls[0].vob_wall_area() + self.walls[1].vob_wall_area() + self.walls[2].vob_wall_area() + \
                self.walls[3].vob_wall_area()
+
+    def get_doors(self):
+        doors = []
+        for wall in self.walls:
+            for opening in wall.openings:
+                if (isinstance(opening, Tuer)):
+                    doors.append(opening)
+        return doors
+
+    def get_windows(self):
+        windows = []
+        for wall in self.walls:
+            for opening in wall.openings:
+                if (isinstance(opening, Fenster)):
+                    windows.append(opening)
+        return windows

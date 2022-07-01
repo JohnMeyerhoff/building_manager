@@ -44,6 +44,8 @@ class Launcher:
         doors = f"Türliste:\n{short_line}\n"
         windows = f"Fensterliste:\n{short_line}\n"
         room_list = []
+        doors_list = []
+        windows_list = []
         eingabe = "leer"
         while eingabe != "nein" and eingabe != "Nein" and eingabe != "n":
             room_list.append(Launcher.get_room_from_console())
@@ -54,10 +56,14 @@ class Launcher:
             bericht.write(rooms)
             for i, room in enumerate(room_list):
                 bericht.write(f"{i}" + room.raumbuch() + "\n\n")
-
+                doors_list.append(room.get_doors())
+                windows_list.append(room.get_windows())
             bericht.write(doors)
-
+            for i, door in enumerate(doors_list):
+                bericht.write(f"{i}" + door.print_me() + "\n\n")
             bericht.write(windows)
+            for i, window in enumerate(windows_list):
+                bericht.write(f"{i}" + window.print_me() + "\n\n")
             bericht.write(ende)
 
         print(exit_message)
@@ -84,7 +90,7 @@ class Launcher:
             eingabe = prompt("Möchten Sie eine Öffnung für die Wand eingeben? (ja/nein) ")
             while eingabe != "nein" and eingabe != "Nein" and eingabe != "n":
                 wall_list[i].add_opening(Launcher.get_opening_from_console())
-                eingabe = prompt("Möchten Sie eine Öffnung für die Wand eingeben? (ja/nein) ")
+                eingabe = prompt("Möchten Sie eine weitere Öffnung für die Wand eingeben? (ja/nein) ")
 
         return Raum(hoehe=wall_list[0].height, bezeichnung=bezeichnung, raumnummer=int(nummer),
                     waende=(wall_list[0], wall_list[1], wall_list[2], wall_list[3]))
@@ -124,8 +130,8 @@ class Launcher:
             rauchschutz = prompt('Rauchschutz: (ja/nein) ') == "ja"
             notausgang = prompt('Notausgang: (ja/nein) ') == "ja"
             hersteller = prompt('Hersteller: ')
-            return Tuer(rauchschutz, notausgang, hersteller,  float(breite), float(hoehe),
-                           float(durchmesser))
+            return Tuer(rauchschutz, notausgang, hersteller, float(breite), float(hoehe),
+                        float(durchmesser))
 
     # aus der Dokumentation
 

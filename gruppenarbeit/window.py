@@ -13,3 +13,6 @@ class Fenster(Oeffnung):
         self.u_value = u_wert
         self.manufacturer = hersteller
         self.brh = brh
+
+    def print_me(self):
+        return f"Fenster: Breite: {self.width}, Durchmesser: {self.diameter}, Höhe (in m): {self.height}"

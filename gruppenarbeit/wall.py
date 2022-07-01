@@ -2,7 +2,7 @@ class Wand:
     length = 0.0
     height = 0.0
     thickness = 0.0
-# Beziehungsrichtung hier von der Wand aus, Liste kann leer sein
+    # Beziehungsrichtung hier von der Wand aus, Liste kann leer sein
     openings = []
 
     def __init__(self, laenge, hoehe, dicke):
@@ -18,6 +18,7 @@ class Wand:
 
     def wall_area(self):
         return 1.0 * self.length * self.height
+
     def vob_wall_area(self):
         area = self.wall_area()
         for opening in self.openings:
